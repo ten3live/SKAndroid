@@ -1,0 +1,71 @@
+{
+  "expo": {
+    "name": "SKMatrimonial",
+    "slug": "SKMatrimonial",
+    "version": "1.0.3",
+    "assets": ["./assets/fonts/"],
+    "orientation": "portrait",
+    "icon": "./assets/bg.png",
+    "scheme": "skmatrimonial",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "icon": "./assets/bg.png"
+    },
+    "android": {
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/bg.png"
+      },
+      "buildArchs": ["armeabi-v7a", "arm64-v8a"],
+      "predictiveBackGestureEnabled": false,
+      "package": "com.skmatrimonial"
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/bg.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-image-picker",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone",
+          "recordAudioAndroid": true
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow $(PRODUCT_NAME) to access your photos.",
+          "savePhotosPermission": "Allow $(PRODUCT_NAME) to save photos.",
+          "isAccessMediaLocationEnabled": true,
+          "granularPermissions": ["audio", "photo"]
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "buildArchs": ["armeabi-v7a", "arm64-v8a"],
+            "usesCleartextTraffic": true
+          }
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/bg.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
